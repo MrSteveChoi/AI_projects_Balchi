@@ -2,7 +2,7 @@
 - 대회기간 : 2023-10-30 ~ 2023-11-30
 - Team : 김다현, 최희영, 지경호
 <br/>
-https://github.com/MrSteveChoi/AI_projects/assets/132117793/eeadd183-db42-4c50-8414-2ce8fa0ddcd6
+![image] (https://github.com/MrSteveChoi/AI_projects/assets/132117793/eeadd183-db42-4c50-8414-2ce8fa0ddcd6)
 <br/>
 1. 대회주제 <br/>
 낙동강 하굿둑 물고기 영상에서 어종을 식별하고 분류하는 AI 모델 개발
