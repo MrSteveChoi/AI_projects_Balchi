@@ -11,7 +11,7 @@
 
 >  **[평가지표]**
 > - Mean Absolute Percentage Error (MAPE) <br/>
->  <img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/a8e4b510-04f9-421c-8264-7224e6551cc6" width=20% height=20%> > <br/>
+>  <img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/a8e4b510-04f9-421c-8264-7224e6551cc6" width=20% height=20%> <br/>
 >  - n : 샘플 수
 >  - y : 실제 타겟 값
 >  - y_hat : 예측 값 
