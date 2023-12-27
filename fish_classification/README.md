@@ -2,7 +2,7 @@
 - 대회기간 : 2023-10-30 ~ 2023-11-30
 - Team : 김다현, 최희영, 지경호
 <br/>
-<img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/4c3dee4d-aae9-41fb-8ac0-3a45a16ff8a6" width="width 30%" height="height 30%">
+<img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/4c3dee4d-aae9-41fb-8ac0-3a45a16ff8a6" width=30% height=30%>
 <br/>
 
 ## 1. 대회주제 <br/>
@@ -26,8 +26,8 @@
 >
 > - Score 산출 과정 설명
 >
->   - 먼저 한 이미지 내의 모든 정답과 모든 예측 사이에 IoU를 계산합니다.
->   - 각 예측은 자신과 IoU가 0.1 이상인 정답 가운데 IoU가 가장 큰 정답에 사용합니다.
+>   1. 먼저 한 이미지 내의 모든 정답과 모든 예측 사이에 IoU를 계산합니다.
+>   2. 각 예측은 자신과 IoU가 0.1 이상인 정답 가운데 IoU가 가장 큰 정답에 사용합니다.
 >
 >     \- 하나의 예측이 복수 정답에 할당될 수 없습니다.
 >
