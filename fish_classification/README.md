@@ -4,7 +4,11 @@
 <br/>
 ![image](https://github.com/MrSteveChoi/AI_projects/assets/132117793/eeadd183-db42-4c50-8414-2ce8fa0ddcd6)
 <br/>
-1. 대회주제 <br/>
+
+## 1. 대회주제 <br/>
 낙동강 하굿둑 물고기 영상에서 어종을 식별하고 분류하는 AI 모델 개발
 
+## 2. 주최 / 주관
+- 주최 : 한국수자원공사(K-water)
+- 주관 : 인공지능팩토리
 > **평가지표**
