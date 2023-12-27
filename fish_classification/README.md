@@ -2,7 +2,7 @@
 - 대회기간 : 2023-10-30 ~ 2023-11-30
 - Team : 김다현, 최희영, 지경호
 <br/>
-![Ai_어종](https://github.com/MrSteveChoi/AI_projects/assets/132117793/4c3dee4d-aae9-41fb-8ac0-3a45a16ff8a6)
+<img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/4c3dee4d-aae9-41fb-8ac0-3a45a16ff8a6">
 <br/>
 
 ## 1. 대회주제 <br/>
