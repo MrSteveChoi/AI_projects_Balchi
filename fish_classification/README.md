@@ -74,3 +74,61 @@
     1. 모든 코드는 오류 없이 실행되어야 함.
     2. 별도 필요한 라이브러리가 있을 경우 소스코드 내에 설치하는 코드가 있어야 함.
     3. 원활한 코드 구동 및 성능 재현성 검증을 위해 필요한 최소한의 주석 혹은 가이드가 제공되어야 함.
+
+## 데이터 구조
+```
+fish
+├── YOLO
+├── data
+│   ├── YOLO
+│   │   ├── test
+│   │   ├── train
+│   │   ├── train_
+│   │   └── valid_
+│   ├── labels_YOLO
+│   │   ├── test
+│   │   └── train
+│   ├── original
+│   │   ├── labels
+│   │   ├── test
+│   │   └── train
+│   └── yolo_train
+├── data-preprocess
+├── data_convert_tools
+│   ├── COCO_train_test
+│   └── convert2Yolo
+│       ├── __pycache__
+│       ├── example
+│       │   ├── kitti
+│       │   │   ├── images
+│       │   │   └── labels
+│       │   └── voc
+│       │       ├── JPEG
+│       │       └── label
+│       └── images
+├── emsemble
+├── models
+│   ├── Detectron
+│   │   └── 
+│   └── YOLO
+├── outputs
+│   ├── Detectron
+│   ├── YOLO
+│   │   └── test_01
+│   │       └── weights
+│   └── test_01
+│       └── weights
+├── submission
+├── wandb
+└── yolo_train
+    ├── USER
+    │   └── mnc
+    │       └── fish
+    │           └── data
+    ├── yolo
+    │   ├── results
+    │   ├── test
+    │   ├── train
+    │   └── valid
+    └── yolo_config
+```
