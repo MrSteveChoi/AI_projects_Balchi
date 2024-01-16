@@ -22,12 +22,14 @@ EDA 결과를 토대로 label이 존재하는 이미지를 학습 이미지로 �
 <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/a0866158-5868-45ce-9100-791377583640" width=70% > <br/>
 ### 2. 훈련 데이터 명세
 <br/>
-|Num total|TrainSet|ValidSet|
-|:--:|:--:|:--:|
-|18,752|15,001(80%)|3,751(20%)|
+Num total|TrainSet|ValidSet
+:---:|:---:|:---:|
+18,752|15,001(80%)|3,751(20%)
+<br/>
 ### 3. 훈련 모델
 yolo-v8
 Detectron2(fast-RCNN)
+<br/>
 ### 4. 모델 학습
 <br/>
 ### 5. 결과
