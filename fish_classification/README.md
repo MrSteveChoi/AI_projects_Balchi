@@ -1,134 +1,61 @@
 # [2023 제3회 K-water AI 경진대회] 어종(魚種) 식별 및 분류 알고리즘 개발
 - 대회기간 : 2023-10-30 ~ 2023-11-30
 - Team : 김다현, 최희영, 지경호
+- Topic : Object Detection
 <br/>
+<p align="center">
 <img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/4c3dee4d-aae9-41fb-8ac0-3a45a16ff8a6" width=60% height=60%>
+</p>
 <br/>
 
-## 1. 대회주제 <br/>
-낙동강 하굿둑 물고기 영상에서 어종을 식별하고 분류하는 AI 모델 개발
+## 대회주제 <br/>
+낙동강 하굿둑 물고기 영상에서 수조 내에 찍힌 물고기의 어종을 식별하고 분류하는 AI 모델을 개발합니다. <br/>
 
->  **[평가지표]**
->
-> - 본 대회의 평가에는 Macro F1 Score가 사용됩니다.
->
->   - mAP가 아니라 F1이므로 **참가자분들은 불필요한 중복 예측이 없도록 Non-Max Suppression 혹은 그에 준하는 정리 과정을 적용한 결과물을 제출하셔야 합니다.**
->
->     ![img](https://cdn.aifactory.space/images/20231027123529_YWQd.png)
->
->     ![img](https://cdn.aifactory.space/images/20231027123529_oBTw.png)
->
-> - F1 Score 계산 방식
->
->   - 위치와 클래스가 정확히 맞으면 TP
->   - 둘 중 하나라도 틀리면 FP
->   - 예측이 만들어지지 않은 레이블은 FN
->
-> - Score 산출 과정 설명
->
->   1. 먼저 한 이미지 내의 모든 정답과 모든 예측 사이에 IoU를 계산합니다. <br/>
->   2. 각 예측은 자신과 IoU가 0.1 이상인 정답 가운데 IoU가 가장 큰 정답에 사용합니다.
->     - 하나의 예측이 복수 정답에 할당될 수 없습니다.
->   3. 각 정답은 위 할당 조건을 통과한 하나, 여럿, 또는 0개의 예측이 사용합니다. <br/>
->     - 정답에 하나의 예측이 할당된 경우, 클래스도 맞으면 정답 클래스에 TP, 틀리면 FP로 간주합니다. <br/>
->     - 정답에 여러 예측이 할당될 경우 IoU가 가장 큰 예측 하나를 진짜로 간주, 클래스도 맞으면 정답 클래스에 TP, 틀리면 FP 로 간주합니다. <br/>
->      - 나머지 할당되었으나 IoU가 가장 크지 않은 예측들은 각각의 예측 클래스에 FP로 간주합니다. <br/>
->     - 정답이 있으나 아무 예측도 할당되지 않은 경우 해당 정답 클래스에 FN로 간주합니다. <br/>
->     - 아무 정답도 없는 구역에 생성된 예측은 해당 예측 클래스에 FP로 간주합니다. <br/>
->   4. 위 단계를 통해 최종적으로 Macro F1 score 점수를 계산합니다.
+---
+## 대회 진행 과정 <br/>
+### 1. DATA 준비
+Data set | 개수  
+:---: | :---: | 
+train | 104,875
+test | 44,946
+Label이 존재하는 data | 5,561
+<br/>
+EDA 결과를 토대로 label이 존재하는 이미지를 학습 이미지로 사용하되, Class imbalance 문제와 특정 Class에 대해 높은 mAP값이 나오는 문제를 해결하기 위한 Augmentation 방법을 적용하였습니다.<br/>
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/a0866158-5868-45ce-9100-791377583640" width=70% > <br/>
 
-## 2. 주최 / 주관
+### 2. 훈련 데이터 명세
+Num total | TrainSet | ValidSet
+:---: | :---: | :---: |
+18,752 | 15,001(80%) | 3,751(20%)
+<br/>
+
+### 3. 모델 학습 과정
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/ef01b326-9957-449f-95e3-c6b812a2f216" width=70% > <br/>
+<br/>
+
+### 4. 결과
+Metric: Macro F1 Score <br/>
+Public Score : 40th(%) / 0.5030873813 <br/>
+Private Score: 44th(%) / 0.5214107843 <br/>
+https://aifactory.space/task/2600/leaderboard <br/>
+
+---
+
+### 회고
+<br/>
+
+---
+
+### 기술스택
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+---
+
+### Refernce
+- 어종분류를 위한 CNN적용 <br/>
+    - https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=JAKO201912261948910 <br/>
+- 딥러닝을 이용한 어종 판별 시스템 <br/>
+    - https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=DIKO0015305668  <br/>
+
+### 주관 / 주최
 - 주최 : 한국수자원공사(K-water)
 - 주관 : 인공지능팩토리
-
-## 3. 대회규칙 및 검증 관련 안내
-1. 데이터 및 모델
-- 외부데이터 사용 불가능
-- 사전학습모델(pre-trained) 은 라이센스에 문제가 없다면 활용 가능
-- 앙상블 가능
-- data augmentation 및 추가 라벨링 가능
-- Test셋은 학습에 활용 불가
-2. 팀 참가
-- 한 팀의 인원 제한은 최대 4명
-- 팀이 수상하는 경우 팀 대표에게만 상금 지급
-- **시상식에는 입상팀 중 최소 1명 필참**
-3. 제출
-- 제출횟수 제한 : 팀당 1일 5회
-- 추론 시간 제한 : 1시간 이내
-- 재제출 시간 제한 : 1시간
-4. 저작물 제출 및 검증
-- 입상 후보팀으로 선정되는 경우 아래 3개 저작물을 cs@aifactory.page 로 일괄 제출 
-- 코드와 주석의 인코딩은 모두 UTF-8을 사용
-    1. 작성 코드 : *.ipynb
-     - 최종 1회 제출
-     - 학습용 소스와 추론용 소스를 별도의 파일로 분리하는 것을 권장
-     - 검증자료 제출 시 사용한 python 버전, OS버전 필수 기재 (권장 버전 : python 3.9)
-     - 특히, 특수 패키지를 사용하는 경우 반드시 python 패키지 명시
-     - 제출 시 랜덤 시드를 고정하지 않을 경우, 결과가 일괄적으로 산출되지 않을 수 있으므로 반드시 고정하여 제출 필수. (랜덤 시드 미고정시 입상대상에서 제외될 수 있음.)
-    2. 모델 가중치(weight) 파일 또는 저장된 모델 : 
-     - 딥러닝 계열로 weight가 파일로 저장되는 경우 저장된 weight
-     - 그 밖의 경우는 pickle/ joblib 등의 라이브러리를 이용해 dump한 모델
-    3. 모델 설명서 : *.docx (양식 보기)
-     - 최종 1회 제출
-- 입상자가 제출한 코드는 공지된 검증 기간 내 구동 및 성능에 대한 재현성 검증이 되어야 합니다.
-    1. 모든 코드는 오류 없이 실행되어야 함.
-    2. 별도 필요한 라이브러리가 있을 경우 소스코드 내에 설치하는 코드가 있어야 함.
-    3. 원활한 코드 구동 및 성능 재현성 검증을 위해 필요한 최소한의 주석 혹은 가이드가 제공되어야 함.
-
-## 데이터 구조
-```
-fish
-├── YOLO
-├── data
-│   ├── YOLO
-│   │   ├── test
-│   │   ├── train
-│   │   ├── train_
-│   │   └── valid_
-│   ├── labels_YOLO
-│   │   ├── test
-│   │   └── train
-│   ├── original
-│   │   ├── labels
-│   │   ├── test
-│   │   └── train
-│   └── yolo_train
-├── data-preprocess
-├── data_convert_tools
-│   ├── COCO_train_test
-│   └── convert2Yolo
-│       ├── __pycache__
-│       ├── example
-│       │   ├── kitti
-│       │   │   ├── images
-│       │   │   └── labels
-│       │   └── voc
-│       │       ├── JPEG
-│       │       └── label
-│       └── images
-├── emsemble
-├── models
-│   ├── Detectron
-│   │   └── 
-│   └── YOLO
-├── outputs
-│   ├── Detectron
-│   ├── YOLO
-│   │   └── test_01
-│   │       └── weights
-│   └── test_01
-│       └── weights
-├── submission
-├── wandb
-└── yolo_train
-    ├── USER
-    │   └── mnc
-    │       └── fish
-    │           └── data
-    ├── yolo
-    │   ├── results
-    │   ├── test
-    │   ├── train
-    │   └── valid
-    └── yolo_config
-```
