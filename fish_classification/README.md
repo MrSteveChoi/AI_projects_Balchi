@@ -27,15 +27,14 @@ Num total | TrainSet | ValidSet
 <br/>
 
 ### 3. 훈련 모델
-yolo-v8
-Detectron2(fast-RCNN)
+yolo-v8 <br/>
+Detectron2(fast-RCNN) <br/>
 <br/>
 
 ### 4. 모델 학습
 <br/>
 
 ### 5. 결과
-<br/>
 Metric: MAPE <br/>
 Public Score : th(%) / 6.11069 <br/>
 Private Score: th(%) / 5.589 <br/>
