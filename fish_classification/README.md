@@ -36,9 +36,9 @@ Detectron2(fast-RCNN)
 
 ### 5. 결과
 <br/>
-Metric: SMAPE
-Public Score : th(%) / 6.11069
-Private Score: th(%) / 5.589
+Metric: MAPE <br/>
+Public Score : th(%) / 6.11069 <br/>
+Private Score: th(%) / 5.589 <br/>
 
 ---
 
