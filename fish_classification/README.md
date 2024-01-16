@@ -21,9 +21,8 @@ EDA 결과를 토대로 label이 존재하는 이미지를 학습 이미지로 �
 <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/a0866158-5868-45ce-9100-791377583640" width=70% > <br/>
 
 ### 2. 훈련 데이터 명세
-<br/>
 Num total | TrainSet | ValidSet
-:---: | :---: | :---: | 
+:---: | :---: | :---: |
 18,752 | 15,001(80%) | 3,751(20%)
 <br/>
 
@@ -36,13 +35,16 @@ Detectron2(fast-RCNN)
 <br/>
 
 ### 5. 결과
+<br/>
 Metric: SMAPE
 Public Score : th(%) / 6.11069
 Private Score: th(%) / 5.589
+
 ---
+
 ### 회고
 
 ---
 
 ### Refernce
->>>>>>> 76a15f390e951fe86442d2702318a7adcecdf170
+
