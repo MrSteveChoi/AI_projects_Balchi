@@ -3,7 +3,9 @@
 - Team : 김다현, 최희영, 지경호
 - Topic : Object Detection
 <br/>
+<p align="center">
 <img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/4c3dee4d-aae9-41fb-8ac0-3a45a16ff8a6" width=60% height=60%>
+</p>
 <br/>
 
 ## 대회주제 <br/>
@@ -40,6 +42,9 @@ https://aifactory.space/task/2600/leaderboard <br/>
 
 ### 회고
 
+---
+### 기술스택
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 ---
 
 ### Refernce
