@@ -10,7 +10,12 @@
 낙동강 하굿둑 물고기 영상에서 수조 내에 찍힌 물고기의 어종을 식별하고 분류하는 AI 모델을 개발합니다.
 ---
 ## 대회 진행 과정 <br/>
+<<<<<<< HEAD
+### 데이터 EDA 및 준비
+- Dataset
+=======
 ### 1. DATA 준비
+>>>>>>> 76a15f390e951fe86442d2702318a7adcecdf170
 Data set | 개수  
 :---: | :---: | 
 train | 104,875
@@ -18,20 +23,28 @@ test | 44,946
 Label이 존재하는 data | 5,561
 <br/>
 <br/>
+<<<<<<< HEAD
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/a0866158-5868-45ce-9100-791377583640" width=60% height=60%> <br/>
+EDA 결과를 토대로 label이 존재하는 이미지를 학습 이미지로 사용하되, Class imbalance 문제와 특정 Class에 대해 높은 mAP값이 나오는 문제를 해결하기 위한 Augmentation 방법을 적용하였습니다.
+=======
 EDA 결과를 토대로 label이 존재하는 이미지를 학습 이미지로 사용하되, Class imbalance 문제와 특정 Class에 대해 높은 mAP값이 나오는 문제를 해결하기 위한 Augmentation 방법을 적용하였습니다.<br/>
 <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/a0866158-5868-45ce-9100-791377583640" width=70% > <br/>
+
 ### 2. 훈련 데이터 명세
 <br/>
-Num total|TrainSet|ValidSet
-:---:|:---:|:---:|
-18,752|15,001(80%)|3,751(20%)
+Num total | TrainSet | ValidSet
+:---: | :---: | :---: | 
+18,752 | 15,001(80%) | 3,751(20%)
 <br/>
+
 ### 3. 훈련 모델
 yolo-v8
 Detectron2(fast-RCNN)
 <br/>
+
 ### 4. 모델 학습
 <br/>
+
 ### 5. 결과
 Metric: SMAPE
 Public Score : th(%) / 6.11069
@@ -40,3 +53,4 @@ Private Score: th(%) / 5.589
 ### 회고
 ---
 ### Refernce
+>>>>>>> 76a15f390e951fe86442d2702318a7adcecdf170
