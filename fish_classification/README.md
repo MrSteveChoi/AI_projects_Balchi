@@ -19,7 +19,7 @@ test | 44,946
 Label 정보 | 5,561
 <br/>
 train 이미지 내에 총 존재하는 물고기의 수는 총 6,301마리이며, 분포는 아래 그래프와 같습니다.
-<img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/b0006364-3a15-40ba-9667-031beba24d29/60c49ae6-ea42-40e0-aaca-ba454124baab/Untitled.png" width=60% height=60%>
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/2031f177-30d4-4e86-ae8d-7bdbb1290b9e" width=60% height=60%>
 <br/>
-<img src="!https://prod-files-secure.s3.us-west-2.amazonaws.com/b0006364-3a15-40ba-9667-031beba24d29/41420fde-60ab-4ec6-b905-6dcccc60a4ba/Untitled.png" width=60% height=60%>
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/ed7e025c-0b38-474d-a121-b6ec209625fa" width=60% height=60%>
 EDA 결과를 토대로 label이 존재하는 이미지를 학습 이미지로 사용하되, Class imbalance 문제와 특정 Class에 대해 높은 mAP값이 나오는 문제를 해결하기 위한 Augmentation 방법을 적용하였습니다.
