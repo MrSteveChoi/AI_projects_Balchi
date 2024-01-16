@@ -16,11 +16,11 @@
 
 ## 기술 스택
 
-- python
-  pytorch
-  YOLOv8
-  Detectron2
-  albumentation
+- python<br>
+  pytorch<br>
+  YOLOv8<br>
+  Detectron2<br>
+  albumentation<br>
 
 <br>
 
@@ -29,7 +29,7 @@
 ### 데이터 정의 및 준비
 
 - 주어진 Dataset
-  - train images : 104,875장 
+  - train images : 104,875장<br>
     test images : 44,946장
   - Label의 정보가 담겨있는 json파일
 - Label의 정의
