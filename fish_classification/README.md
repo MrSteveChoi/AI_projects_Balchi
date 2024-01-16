@@ -1,5 +1,7 @@
 # [2023 제3회 K-water AI 경진대회] 어종(魚種) 식별 및 분류 알고리즘 개발
 - 대회기간 : 2023-10-30 ~ 2023-11-30
+- 주최 : 한국수자원공사(K-water)
+- 주관 : 인공지능팩토리
 - Team : 김다현, 최희영, 지경호
 - Topic : Object Detection
 <br/>
@@ -59,3 +61,4 @@ https://aifactory.space/task/2600/leaderboard <br/>
 ### 주관 / 주최
 - 주최 : 한국수자원공사(K-water)
 - 주관 : 인공지능팩토리
+
