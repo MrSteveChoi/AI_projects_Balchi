@@ -42,8 +42,10 @@ https://aifactory.space/task/2600/leaderboard <br/>
 ---
 
 ### 회고
+<br/>
 
 ---
+
 ### 기술스택
 <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 ---
