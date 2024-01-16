@@ -119,8 +119,6 @@
 >
 > - 본 대회의 평가에는 Macro F1 Score가 사용됩니다.
 >
->   - mAP가 아니라 F1이므로 **참가자분들은 불필요한 중복 예측이 없도록 Non-Max Suppression 혹은 그에 준하는 정리 과정을 적용한 결과물을 제출하셔야 합니다.**
->
 >     ![img](https://cdn.aifactory.space/images/20231027123529_YWQd.png)
 >
 >     ![img](https://cdn.aifactory.space/images/20231027123529_oBTw.png)
