@@ -42,8 +42,6 @@ https://aifactory.space/task/2600/leaderboard <br/>
 ---
 
 ### 회고
-<br/>
-
 - 아쉬운 점
     - YOLOv8의 tarin 과정에서 augmentation을 적용시키는데 시간이 많이 소요된 점이 아쉬웠습니다.
     - 물고기를 bbox로 crop하여 background image와 합성하는 cutmix 방식을 사용했는데 SAM등을 활용해서 깔끔하게 segmentation 후에 합성하는 copy-paste augmentation을 사용했다면 결과가 더 좋았을 것이라는 생각이 들었습니다.
