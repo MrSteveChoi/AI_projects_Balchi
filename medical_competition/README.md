@@ -42,11 +42,12 @@ Num total | TrainSet | ValidSet
 <br/>
 
 ### 4. 결과
-Metric: MAPE <br/>
-Final Score : 9th / 0.4422 <br/>
-Public Score : 9th / 0.5525 <br/>
-Private Score: 9th / 0.3949 <br/>
-https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
+- Metric: MAPE <br/>
+- Score
+  - Final Score : 9th / 0.4422 <br/>
+  - Public Score : 9th / 0.5525 <br/>
+  - Private Score: 9th / 0.3949 <br/>
+  - https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
 
 ---
 
@@ -76,9 +77,9 @@ https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
 
 ### 기술 스택
 
-  python  <br/>
-  pytorch  <br/>
-  albumentation  <br/>
+- python  <br/>
+- pytorch  <br/>
+- albumentation  <br/>
 
 ### Reference
 
