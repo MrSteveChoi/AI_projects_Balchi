@@ -3,7 +3,7 @@
 - Team : 김다현, 최희영, 지경호, 양재하
 <br/>
 <p align="center">
-<img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/8795d664-fc2d-43d0-ac44-8c0863a97bbc" width=70% height=70%>
+<img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/8795d664-fc2d-43d0-ac44-8c0863a97bbc" width=50% height=50%>
 </p>
 <br/>
 
@@ -20,14 +20,15 @@ train images | 432
 test images | 286
 meta data | -
 <br>
-* image 파일 시각화 불가능 <br>
-- image 파일은 예상도 <br> 
+** image 파일 시각화 불가능 ** <br>
+ - image 파일은 예상도 <br> 
   - Panorama X-ray에서 하악 사랑니를 crop한 image <br>
   - 사랑니 앞치아와의 관계 및 하치조신경이 포함된 사진일 것으로 예상 <br>
-  <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/727e1870-d8f1-432d-9a0c-c5c7f9305f4a"> <br>
-- meta data 예시 <br>
-  <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/344550b8-a33a-477c-ada1-aad65826d951"> <br>
-  '''
+  <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/727e1870-d8f1-432d-9a0c-c5c7f9305f4a" width=70% > <br>
+ - meta data 예시 <br>
+  <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/344550b8-a33a-477c-ada1-aad65826d951" width=70% > <br>
+
+'''
   - filename : 이미지 파일명
   - operator : 수술 집도의 (익명화 처리됨)
   - date : 수술 집행 날짜
@@ -40,7 +41,7 @@ meta data | -
   - weight : 환자의 몸무게 (kg)
   - bmi : 환자의 bmi
   - time_min : 수술 소요시간 (타겟 정보, train 데이터만 제공)
-  '''
+'''  ''''''
 
 <br>
 
