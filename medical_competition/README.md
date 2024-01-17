@@ -31,6 +31,8 @@ meta data | -
 <br>
 
 ### 2. 훈련 데이터 명세
+- meta data EDA
+
  Image Augmentation을 통해 증강한 총 2,500개 데이터를 학습용 데이터(Training Set), 검증 및 모델 선택용 데이터(Validation Set)로 나누었고, 그 비율은 8:2로 설정했습니다.
 Num total | TrainSet | ValidSet
 :---: | :---: | :---: |
