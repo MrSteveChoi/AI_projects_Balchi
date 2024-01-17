@@ -44,6 +44,26 @@ https://aifactory.space/task/2600/leaderboard <br/>
 ### 회고
 <br/>
 
+- 아쉬운 점
+    - YOLOv8의 tarin 과정에서 augmentation을 적용시키는데 시간이 많이 소요된 점이 아쉬웠습니다.
+    - 물고기를 bbox로 crop하여 background image와 합성하는 cutmix 방식을 사용했는데 SAM등을 활용해서 깔끔하게 segmentation 후에 합성하는 copy-paste augmentation을 사용했다면 결과가 더 좋았을 것이라는 생각이 들었습니다.
+    - 배경과 물고기를 무작위로 합성하는것이 아닌, 추론에 약한 특정 환경(녹조 등)을 파악 후 해당 환경과 비슷한 합성 이미지를 만들었다면 결과가 더 좋았을 것 같습니다.
+    - 물고기를 crop한 후 새로운 이미지를 생성하는 방법 외에도 SCUMBLE, REMEDIAL, MLSOL, MLSMOTE 등의 OD-task에서 한 데이터에 multi-class가 있는 경우의 stratify 방법론들을 적용해 보았으면 좋았을 것 같습니다.
+    - train data에서 부족한 label만 추출 후 합성을 통해 추가적인 학습용 이미지를 만들었으나 예상보다 결과가 좋지 않아서 아쉬웠습니다.
+    - 단일 모델에서 soft-NMS를 적용해 보았다면 좋았을 것 같습니다.
+    - YOLOv8을 포함한 여러 모델들의 WBF(Weighted Boxes Fusion)앙상블을 시도해 보았다면 더 좋은 결과를 얻을 수 있었을것 같습니다.
+- 느낀 점
+    - YOLO와 같이 만들어져 있는 모델을 가져다가 baseline code를 만드는 것도 생각보다 쉽지 않다는걸 느꼈습니다.
+    - 2-stage detector가 1-stage detector보다 성능이 좋을것 이라고 생각했는데 결과는 2-stage 인 YOLO가 더 좋았음. 최신 모델이면 1-stage가 2-stage보다 성능이 좋을 수 있다는 걸 배웠습니다.
+    - 단순히 Augmentation을 한다고 무조건 성능이 오르는게 아
+- 얻은 것
+    - YOLOv8과 Detectron2로 OD가 가능한 end-to-end Pipeline 구축에 성공한 점이 만족스러웠습니다.
+    - 복잡한 COCO.json 파일을 pycocotools를 이용해 파싱하는 법을 연습할 수 있었습니다.
+    - COCO dataset과 YOLO dataset의  bbox format이 다르고, 이를 변환하는 방법에 대해 알 수 있었습니다.
+- 다음에 할 것
+    - 물고기를 bbox로 crop하여 background image와 합성하는 cutmix 방식을 사용했는데 SAM등을 활용해서 깔끔하게 segmentation 후에 합성하는 copy-paste 방식을 사용했다면 결과가 더 좋았을 것이라는 생각이 들었습니다.
+- 아직도 모르겠는 점
+    - 2-stage detector인 fast-RCNN이 1-stage detector인 YOLO보다 성능이 낮게 나온 것을 보고 DL의 결과는 데이터 마다 다르다는 것을 실감했습니다.
 ---
 
 ### 기술스택
