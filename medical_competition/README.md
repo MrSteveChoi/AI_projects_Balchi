@@ -21,14 +21,15 @@ test images | 286
 meta data | -
 <br>
 ** image 파일 시각화 불가능 ** <br>
+
  - image 파일은 예상도 <br> 
-  - Panorama X-ray에서 하악 사랑니를 crop한 image <br>
-  - 사랑니 앞치아와의 관계 및 하치조신경이 포함된 사진일 것으로 예상 <br>
+   - Panorama X-ray에서 하악 사랑니를 crop한 image <br>
+   - 사랑니 앞치아와의 관계 및 하치조신경이 포함된 사진일 것으로 예상 <br>
   <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/727e1870-d8f1-432d-9a0c-c5c7f9305f4a" width=70% > <br>
  - meta data 예시 <br>
   <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/344550b8-a33a-477c-ada1-aad65826d951" width=70% > <br>
 
-'''
+```
   - filename : 이미지 파일명
   - operator : 수술 집도의 (익명화 처리됨)
   - date : 수술 집행 날짜
@@ -41,7 +42,7 @@ meta data | -
   - weight : 환자의 몸무게 (kg)
   - bmi : 환자의 bmi
   - time_min : 수술 소요시간 (타겟 정보, train 데이터만 제공)
-'''  ''''''
+```
 
 <br>
 
@@ -52,7 +53,7 @@ Num total | TrainSet | ValidSet
 2,500 | 2,000(80%) | 500(20%)
 <br/>
 ### 3. 모델 학습 과정
-<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/ef01b326-9957-449f-95e3-c6b812a2f216" width=70% > <br/>
+<img src="" width=70% > <br/>
 <br/>
 
 ### 4. 결과
@@ -74,12 +75,18 @@ https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
 
 ---
 
-## 기술 스택
+### 기술 스택
 
 - python
   pytorch
   albumentation
 
+### Reference
+
+---
+### 주관 / 주최
+ - 주최 : 홍익대 바이오헬스 혁신융합대학사업단, 삼성서울병원, 경희대학교치과병원
+ - 주관 : AI CONNECT
 <br>
 
 ## 프로젝트 진행 과정
