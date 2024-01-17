@@ -2,20 +2,76 @@
 - 대회기간 : 2023-11-20 ~ 2023-11-27
 - Team : 김다현, 최희영, 지경호, 양재하
 <br/>
+<p align="center">
 <img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/8795d664-fc2d-43d0-ac44-8c0863a97bbc" width=70% height=70%>
+</p>
 <br/>
 
-
-## 1. 대회 목표 및 과제
+## 대회 목표 및 과제 <br/>
  - 목표 및 기대효과 : 바이오헬스 데이터와 AI 기술을 활용하여 치의학 분야에서의 위험성 평가와 예측 모델 개발
  - 과제 : 사랑니 이미지와 환자 데이터를 바탕으로 사랑니 발치 시간을 예측하는 모델 개발
+---
 
-# 프로젝트의 배경 및 목적
-
-- 바이오헬스 데이터와 AI 기술을 활용하여 치의학 분야에서의 위험성 평가와 예측 모델 개발
-- 구강 파노라마 이미지에서 촬영된 사랑니 주변 이미지를 기반으로 사랑니 발치에 걸리는 시간을 예측
+## 대회 진행 과정 <br/>
+### 1. Data set
+Data set | 개수  
+:---: | :---: | 
+train images | 432
+test images | 286
+meta data | -
+<br>
+* image 파일 시각화 불가능 <br>
+- image 파일은 예상도 <br> 
+  - Panorama X-ray에서 하악 사랑니를 crop한 image <br>
+  - 사랑니 앞치아와의 관계 및 하치조신경이 포함된 사진일 것으로 예상 <br>
+  <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/727e1870-d8f1-432d-9a0c-c5c7f9305f4a"> <br>
+- meta data 예시 <br>
+  <img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/344550b8-a33a-477c-ada1-aad65826d951"> <br>
+  '''
+  - filename : 이미지 파일명
+  - operator : 수술 집도의 (익명화 처리됨)
+  - date : 수술 집행 날짜
+  - ID : 환자 고유 정보 (익명화 처리됨)
+  - sex : 환자의 성별 (M: 남자, F: 여자)
+  - age : 환자의 연령
+  - ext_tooth : 발치 대상의 치식 번호 (38: 하악 좌측 사랑니, 48: 하악 우측 사랑니)
+  - mmo : 환자가 최대로 입을 벌릴 수 있는 범위를 측정한 값 (mm)
+  - height : 환자의 신장 (cm)
+  - weight : 환자의 몸무게 (kg)
+  - bmi : 환자의 bmi
+  - time_min : 수술 소요시간 (타겟 정보, train 데이터만 제공)
+  '''
 
 <br>
+
+### 2. 훈련 데이터 명세
+ Image Augmentation을 통해 증강한 총 2,500개 데이터를 학습용 데이터(Training Set), 검증 및 모델 선택용 데이터(Validation Set)로 나누었고, 그 비율은 8:2로 설정했습니다.
+Num total | TrainSet | ValidSet
+:---: | :---: | :---: |
+2,500 | 2,000(80%) | 500(20%)
+<br/>
+### 3. 모델 학습 과정
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/ef01b326-9957-449f-95e3-c6b812a2f216" width=70% > <br/>
+<br/>
+
+### 4. 결과
+Metric: MAPE <br/>
+Public Score : 9th(%) / 0.4546 <br/>
+Private Score: 9th(%) / (수정) <br/>
+https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
+
+---
+
+### 회고
+- 폐쇄 환경에서 Vim을 이용해서 .py파일만으로 학습을 시켜볼 수 있었던 독특한 경험이였음.
+- 부족한 train data를 물리적으로 증강하여 학습에 사용.
+- 그럼에도 불구하고 예상보다 결과가 좋지 않았음.
+- 제출 횟수가 부족했기 때문에 여러가지 해보고싶던 실험을 시도해 보지 못했음.
+- 제출 전에 자체적은 평가지표를 만든 후 활용했으면 좀 더 많은 실험을 해볼 수 있지 않았을까 함
+- 다른 사람들의 solution에서는 회귀문제를 구간화하여 분류문제로 해결한 팀도 있었는데, 좋은 접근법이였던것 같다.
+<br/>
+
+---
 
 ## 기술 스택
 
@@ -122,16 +178,6 @@
 - EfficientNetB4와 Swin을 사용하여 발치시간을 예측 (회귀)
 - 9위  
 
-<br>
-
-## 잘한 점 및 부족했던 점
-
-- 폐쇄 환경에서 Vim을 이용해서 .py파일만으로 학습을 시켜볼 수 있었던 독특한 경험이였음.
-- 부족한 train data를 물리적으로 증강하여 학습에 사용.
-- 그럼에도 불구하고 예상보다 결과가 좋지 않았음.
-- 제출 횟수가 부족했기 때문에 여러가지 해보고싶던 실험을 시도해 보지 못했음.
-- 제출 전에 자체적은 평가지표를 만든 후 활용했으면 좀 더 많은 실험을 해볼 수 있지 않았을까 함
-- 다른 사람들의 solution에서는 회귀문제를 구간화하여 분류문제로 해결한 팀도 있었는데, 좋은 접근법이였던것 같다.
 
 <br>
 
