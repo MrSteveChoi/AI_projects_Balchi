@@ -31,8 +31,6 @@ meta data | -
 <br>
 
 ### 2. 훈련 데이터 명세
-- meta data EDA
-
  Image Augmentation을 통해 증강한 총 2,500개 데이터를 학습용 데이터(Training Set), 검증 및 모델 선택용 데이터(Validation Set)로 나누었고, 그 비율은 8:2로 설정했습니다.
 Num total | TrainSet | ValidSet
 :---: | :---: | :---: |
@@ -40,24 +38,38 @@ Num total | TrainSet | ValidSet
 <br/>
 
 ### 3. 모델 학습 과정
-<img src="" width=70% > <br/>
+<img src="https://github.com/MrSteveChoi/AI_projects_Balchi/assets/132117793/4e169f13-3a53-435a-8564-91c31d126027" width=70% > <br/>
 <br/>
 
 ### 4. 결과
 Metric: MAPE <br/>
-Public Score : 9th(%) / 0.4546 <br/>
-Private Score: 9th(%) / (수정) <br/>
+Final Score : 9th / 0.4422
+Public Score : 9th / 0.5525 <br/>
+Private Score: 9th / 0.3949 <br/>
 https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
 
 ---
 
 ### 회고
-- 폐쇄 환경에서 Vim을 이용해서 .py파일만으로 학습을 시켜볼 수 있었던 독특한 경험이였음.
-- 부족한 train data를 물리적으로 증강하여 학습에 사용.
-- 그럼에도 불구하고 예상보다 결과가 좋지 않았음.
-- 제출 횟수가 부족했기 때문에 여러가지 해보고싶던 실험을 시도해 보지 못했음.
-- 제출 전에 자체적은 평가지표를 만든 후 활용했으면 좀 더 많은 실험을 해볼 수 있지 않았을까 함
-- 다른 사람들의 solution에서는 회귀문제를 구간화하여 분류문제로 해결한 팀도 있었는데, 좋은 접근법이였던것 같다.
+- 아쉬운 점
+    - 약 일주일 정도의 짧은 대회 기간이였기 때문에, 대회 시작 전에 CLI환경에서 사용 가능한 코드를 작성해 시간을 조금 더 효율적으로 사용했으면 어땠을까 하는 아쉬움이 남습니다.
+    - 대회에서 제공받은 환경에 computing resource의 한계로 ViT와 같은 큰 모델을 적극적으로 사용하지 못한 것이 아쉬웠습니다.
+    - 전체 제출 횟수가 부족하여 해보고 싶은 실험을 모두 할 수 없었던 점이 아쉬웠습니다.
+    - 시술자의 실력은 날이 갈수록 좋아지기 때문에 선형적으로 시술 시간이 줄어드는 것을 확인하였으나 이를 적극 활용하지 못했습니다. 해당 대회에서 시술자를 기준으로 모델을 따로 학습시켜 inference하는 방식을 적용해봤으면 좋았을 것 같습니다.
+    - time feature를 활용하여 첫 날짜를 기준으로 시간이 지날수록 해당 의사에게 가중치를 주는 방식으로 예측하는 방법을 적용해 보았으면 좋았을 것 같습니다.
+    - 발치 시간을 예측하는 “회귀” 문제를 시간대 별로 binning하여 다중 분류 문제로 접근해 보면 어땠을까 하는 아쉬움이 있습니다.
+- 느낀 점
+    - 폐쇄 환경에서 CLI만을 이용해서 end-to-end로 학습을 해 보는 좋은 기회가 되었습니다.
+    - CLI환경에서만 학습을 해야 했기 때문에 함수들의 모듈화를 시도해볼 수 있는 좋은 기회였습니다.
+    - 이미지와 메타데이터 모두를 한 번에 사용하는 multi-modal training을 직접 적용해볼 수 있었습니다.
+    - 순위권 팀들의 성과공유를 통해 학습에 적용한 기술적인 방법론이 비슷하다 하더라도 작은 디테일들에 의해 성능이 크게 달라질 수 있다는 것을 느꼈습니다.
+    - doctor와 patient간의 attention score와 이미지의 feature를 합친 custom model을 직접 설계해서 사용해볼 수 있겠다는 생각을 하였습니다.
+- 얻은 것
+    - 제한된 제출기회를 의미있게 활용하려면 public score와 상관관계를 가지는 내부적인 evaluation metric을 빠르게 확보하는 것이 중요하다는 점을 느꼈습니다.
+    - 대회에서 사용할 모델을 선택하기 전에 관련 대회나 논문을 살펴보고 결과가 좋았던 모델을 선택하는 방법이 있다는 것을 배웠습니다.
+    - 정해진 loss-metric이외에도 해당 task에 어울리는 다른 loss를 적용해 모델을 학습하는 것이 모델의 학습 결과에 큰 영향을 끼친다는 것을 배웠습니다.
+- 다음에 할 것
+    - 1등 팀이 공개한 attention을 활용한 custom모델을 참고해서 직접 구현해 보려고 합니다.
 <br/>
 
 ---
@@ -72,134 +84,9 @@ https://aiconnect.kr/competition/detail/233/task/307/leaderboard <br/>
 
 ---
 ### 주관 / 주최
- - 주최 : 홍익대 바이오헬스 혁신융합대학사업단, 삼성서울병원, 경희대학교치과병원
- - 주관 : AI CONNECT
-<br>
-
-## 프로젝트 진행 과정
-
-### 데이터 정의 및 준비
-
-- 주어진 Dataset
-  
-  - 사랑니 부분이 crop된 구강 파노라마 이미지 (3, 300, 300)
-  
-    - train images : 432장
-      test images : 286장
-    - 이미지의 정보가 담겨있는 CSV파일
-  
-    
-  
-- 환자 정보 컬럼 명세 (CSV)
-  - **filename** : 이미지 파일명
-  - **operator** : 수술 집도의 (익명화 처리됨)
-  - **date** : 수술 집행 날짜
-  - **ID** : 환자 고유 정보 (익명화 처리됨)
-  - **sex** : 환자의 성별 (M: 남자, F: 여자)
-  - **age** : 환자의 연령
-  - **ext_tooth** : 발치 대상의 치식 번호 (38: 하악 좌측 사랑니, 48: 하악 우측 사랑니)
-  - **mmo** : 환자가 최대로 입을 벌릴 수 있는 범위를 측정한 값 (mm)
-  - **height** : 환자의 신장 (cm)
-  - **weight** : 환자의 몸무게 (kg)
-  - **bmi** : 환자의 bmi
-  - **time_min** : 수술 소요시간 (타겟 정보, train 데이터만 제공)
-
-  
-
-- Dataset 준비
-  - train data의 시각화가 불가능하기 때문에 일반적인 구강 파노라마 이미지를 사용해 테스트.
-  
-- Dataset augmentation 및 분리
-  
-  - 모든 사랑니는 하악 좌측, 우측 사랑니이므로 vertical flip은 적용하지 않음.
-  - meta data를 확인한 결과 좌, 우측 사랑니의 발치시간이 유의미하게 차이나지 않기 때문에 우측 사랑니일 경우 horizontal flip을 적용
-  
-  - 총 432장 데이터를 학습용 데이터(Training Set), 검증용 데이터(Validation Set)로 나누었고, 그 비율은 **8:2**로 설정했습니다.
-  - 부족한 이미지를 물리적으로 증강하여 총 2,500개 데이터를 학습용 데이터(Training Set), 검증 및 모델 선택용 데이터(Validation Set)로 나누었고, 그 비율은 8:2로 설정했습니다.
-
-<br>
-
-## 모델 선택의 이유
-
-- Resnet50
-  - 
-- EfficientNet_b0-7
-  - 
-- Vit_base / small
-- Swinv2_tiny / small
-
-<br>
-
-## 모델 학습(Training) 과정
-
-### Image Augmentation
-
-- RandomSizedCrop
-- OneOf
-  - HueSaturationValue
-  - RandomBrightnessContrast
-- JpegCompression
-- OneOf
-  - Blur
-  - MedianBlur
-
-- HorizontalFlip
-- RandomRotate90
-- Transpose
-- Resize
-- Cutout
-- Normalize
-
-<br>
-
-### Loss
-
-- L1Loss
-
-<br>
-
-## 성능 평
-
->  **[평가지표]**
-> - Mean Absolute Percentage Error (MAPE) <br/>
->  <img src="https://github.com/MrSteveChoi/AI_projects/assets/132117793/a8e4b510-04f9-421c-8264-7224e6551cc6" width=20% height=20%> <br/>
->  - n : 샘플 수
->  - y : 실제 타겟 값
->  - y_hat : 예측 값 
-<br>
-
-## 프로젝트 결과
-
-- EfficientNetB4와 Swin을 사용하여 발치시간을 예측 (회귀)
-- 9위  
-
-
-<br>
-
-## 데이터 구조
-```
-${PROJECT}
-├── config/
-│   ├── train_config.yaml
-│   ├── predict_config.yaml
-├── models/
-│   ├── effnet.py
-│   └── utils.py
-├── modules/
-│   ├── datasets.py
-│   ├── earlystoppers.py
-│   ├── losses.py
-│   ├── metrics.py
-│   ├── optimizers.py
-│   ├── recorders.py
-│   ├── trainer.py
-│   └── utils.py
-├── README.md
-├── train.py
-└── predict.py
-```
-
-
+ - 주최 : 홍익대 바이오헬스 혁신융합대학사업단, 삼성서울병원, 경희대학교치과병원 <br/>
+ - 주관 : AI CONNECT <br/>
+<br/>
 
 ### Vim 환경설정
 
