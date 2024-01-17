@@ -20,6 +20,7 @@ train images | 432
 test images | 286
 meta data | -
 <br>
+
 ** image 파일 시각화 불가능 ** <br>
 
  - image 파일은 예상도 <br> 
@@ -52,6 +53,7 @@ Num total | TrainSet | ValidSet
 :---: | :---: | :---: |
 2,500 | 2,000(80%) | 500(20%)
 <br/>
+
 ### 3. 모델 학습 과정
 <img src="" width=70% > <br/>
 <br/>
